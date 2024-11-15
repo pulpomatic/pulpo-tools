@@ -1,9 +1,12 @@
 import {
   Sidebar,
   SidebarContent,
+  SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
+
+  SidebarHeader,
 
   SidebarMenu,
   SidebarMenuButton,
@@ -39,18 +42,19 @@ const items = [
 export function AppSidebar() {
   return (
     <Sidebar>
+      <SidebarHeader className="h-14">Pulpo-Tools</SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Pulpo-Tools</SidebarGroupLabel>
+          <SidebarGroupLabel>Basics</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
-                    <a>
+                    <span>
                       <item.icon />
                       <Link href={item.url}>{item.title}</Link>
-                    </a>
+                    </span>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
@@ -58,6 +62,7 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
+      <SidebarFooter>Usuario</SidebarFooter>
     </Sidebar>
   )
 }
