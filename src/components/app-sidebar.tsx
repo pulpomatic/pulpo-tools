@@ -34,7 +34,7 @@ const items = [
   },
   {
     title: "Settings",
-    url: "#",
+    url: "/settings",
     icon: Settings,
   },
 ]
@@ -42,7 +42,7 @@ const items = [
 export function AppSidebar() {
   return (
     <Sidebar>
-      <SidebarHeader className="h-14">Pulpo-Tools</SidebarHeader>
+      <SidebarHeader className="h-14">Pulpo-Tools </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel>Basics</SidebarGroupLabel>
@@ -62,7 +62,7 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
-      <SidebarFooter>Usuario</SidebarFooter>
+      <SidebarFooter></SidebarFooter>
     </Sidebar>
   )
 }

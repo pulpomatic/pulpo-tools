@@ -3,6 +3,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
+import { ThemeProvider } from "@/components/theme-provider";
+import { ModeToggle } from "@/components/mode-toggle-button";
 
 
 const geistSans = localFont({
@@ -31,13 +33,21 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
         <SidebarProvider>
         <AppSidebar />
         <main>
         <SidebarTrigger />
+        <ModeToggle />
         {children}
       </main>
         </SidebarProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
